@@ -14,7 +14,7 @@ const gridKey = ref(0)
 
 const { cursos, galeria, fetchCursos, fetchGaleria } = useContent()
 
-const filtrosGaleria = computed(() => [
+const filtrosGaleria = computed(() => [  /*filtros*/
   { id: 'todos', label: 'Todos' },
   ...(cursos.value || []).map((c) => ({ id: c.slug, label: c.titulo })),
 ])
