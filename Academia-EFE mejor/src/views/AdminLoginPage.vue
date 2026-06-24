@@ -6,7 +6,7 @@ const route = useRoute()
 const router = useRouter()
 
 onMounted(() => {
-  // Unificamos el acceso admin dentro de /login
+  // Unificamos el acceso admin dentro /login
   router.replace({
     path: '/login',
     query: { ...route.query, admin: '1' },
