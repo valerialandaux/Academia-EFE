@@ -6,7 +6,7 @@ dotenv.config()
 
 const prisma = new PrismaClient()
 
-const email = process.env.ADMIN_EMAIL || 'admin@academiaefe.com'
+const email = process.env.ADMIN_EMAIL || 'admin@academiaefe.com' /*entrada de admin */
 const plain = process.env.ADMIN_PASSWORD || 'admin123'
 
 async function main() {
