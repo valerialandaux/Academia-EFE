@@ -41,7 +41,7 @@ function salirAdmin() {
   <div class="navbar-wrap">
     <header class="navbar">
       <RouterLink to="/" class="logo logo-brand" @click="cerrarMenu">
-        <img src="/images/logo-mejor.png" alt="Logo Academia EFE" class="brand-logo-img" width="40" height="40" />
+        <img src="/images/logo-mejor.png" alt="Logo Academia EFE" class="brand-logo-img" width="40" height="40" /> /*imagenes */
         <span>EFE</span>
       </RouterLink>
 
