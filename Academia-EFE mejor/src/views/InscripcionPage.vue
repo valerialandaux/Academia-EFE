@@ -12,7 +12,7 @@ import { useContent } from '../composables/useContent'
 import { validarEmail, validarNombre, validarTelefono } from '../lib/validacion'
 
 const route = useRoute()
-const { user, fetchMe, rellenarFormulario, descuento, inscripcionesActivas } = useAuth()
+const { user, fetchMe, rellenarFormulario, descuento, inscripcionesActivas } = useAuth()  /*autentificacion */
 const { cursos, fetchCursos } = useContent()
 
 const nombre = ref('')
