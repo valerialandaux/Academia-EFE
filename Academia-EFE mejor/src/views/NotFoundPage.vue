@@ -13,7 +13,7 @@ import AppFooter from '../components/AppFooter.vue'
       <h1>Página no encontrada</h1>
       <p class="auth-lead">La ruta que buscas no existe o fue movida.</p>
       <div class="hero-actions" style="justify-content: center; margin-top: 24px">
-        <RouterLink to="/" class="btn-cta-large btn-glow">Volver al inicio</RouterLink>
+        <RouterLink to="/" class="btn-cta-large btn-glow">Volver al inicio</RouterLink> /*botones */
         <RouterLink to="/cursos" class="btn-outline-light">Ver cursos</RouterLink>
       </div>
     </section>
