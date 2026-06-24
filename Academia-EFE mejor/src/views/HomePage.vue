@@ -24,7 +24,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="pagina-inicio">
+  <div class="pagina-inicio"> /*clase de la pagina*/
     <AppNavbar />
 
     <section class="hero hero-anim">
