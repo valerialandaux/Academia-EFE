@@ -1,0 +1,167 @@
+/* VARIABLES CORPORATIVAS */
+:root {
+    --cian: #00efea;
+    --fondo: #4A4B51;
+    --gris: #C6C6C6;
+    --blanco: #ffffff;
+    --fuente: 'Montserrat', sans-serif;
+}
+
+/* RESETEO Y BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--fuente); background-color: var(--fondo); color: var(--blanco); }
+
+/* NAVEGACIÓN (FLEXBOX) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #333438;
+}
+.logo { font-size: 24px; font-weight: 800; color: var(--cian); }
+.navbar ul { list-style: none; display: flex; gap: 30px; align-items: center; }
+.navbar a { text-decoration: none; color: var(--blanco); font-weight: 600; text-transform: uppercase; font-size: 14px;}
+.navbar a:hover { color: var(--cian); }
+.btn-cta { background-color: var(--cian); color: var(--fondo) !important; padding: 10px 20px; border-radius: 5px; font-weight: 800;}
+
+/* SECCIÓN HERO */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Aquí va la foto de fondo, por ahora es un gris oscuro */
+    background-color: #2c2d30; 
+    border-bottom: 5px solid var(--cian);
+}
+.hero h1 { font-size: 50px; color: var(--cian); margin-bottom: 10px; font-weight: 800;}
+.hero p { font-size: 20px; color: var(--gris); margin-bottom: 30px; }
+.btn-cta-large { background-color: var(--cian); color: var(--fondo); padding: 15px 30px; text-decoration: none; font-weight: 800; border-radius: 5px; }
+
+/* CURSOS DESTACADOS (CSS GRID) */
+.cursos-destacados { padding: 60px 50px; text-align: center; }
+.cursos-destacados h2 { margin-bottom: 40px; color: var(--cian); font-size: 30px;}
+.grid-cursos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card-curso { background-color: #333438; border: 1px solid var(--gris); padding: 20px; border-radius: 8px; }
+.foto-placeholder { height: 200px; background-color: var(--gris); color: var(--fondo); display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 20px; }
+.card-curso h3 { margin-bottom: 10px; }
+.card-curso p { color: var(--gris); margin-bottom: 20px; font-size: 14px;}
+.btn-fantasma { background: transparent; border: 2px solid var(--cian); color: var(--cian); padding: 10px 20px; cursor: pointer; font-family: var(--fuente); font-weight: bold; width: 100%;}
+.btn-fantasma:hover { background: var(--cian); color: var(--fondo); }
+/* =========================================
+   COMPORTAMIENTO DE SCROLL SUAVE
+   ========================================= */
+html {
+    scroll-behavior: smooth; /* Hace que al hacer clic en el menú, la página baje suavemente */
+}
+
+/* =========================================
+   SECCIÓN NOSOTROS
+   ========================================= */
+.seccion-nosotros {
+    padding: 80px 50px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    background-color: #333438; /* Un gris un poco diferente para hacer contraste */
+    border-bottom: 2px solid var(--gris);
+}
+
+.nosotros-texto {
+    flex: 1;
+}
+
+.nosotros-texto h2 {
+    color: var(--cian);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.nosotros-texto p {
+    margin-bottom: 15px;
+    color: var(--gris);
+}
+
+.nosotros-imagen {
+    flex: 1;
+}
+
+/* =========================================
+   SECCIÓN CURSOS Y FILTROS LATERALES
+   ========================================= */
+.seccion-cursos {
+    padding: 80px 50px;
+}
+
+.seccion-cursos > h2 {
+    color: var(--cian);
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contenedor-catalogo {
+    display: flex;
+    gap: 40px;
+}
+
+.panel-filtros {
+    flex: 0 0 250px; /* Ancho fijo para los filtros */
+    background-color: #333438;
+    padding: 20px;
+    border: 1px solid var(--gris);
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.panel-filtros h3 {
+    color: var(--cian);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--gris);
+    padding-bottom: 10px;
+}
+
+.filtro-grupo {
+    margin-bottom: 20px;
+}
+
+.filtro-grupo h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--blanco);
+}
+
+.filtro-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gris);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filtro-grupo input {
+    margin-right: 10px;
+    accent-color: var(--cian); /* Pone las casillas de verificación en color cian */
+}
+
+/* Ajustes responsivos para que los filtros se vean bien en celulares */
+@media (max-width: 768px) {
+    .seccion-nosotros {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    
+    .contenedor-catalogo {
+        flex-direction: column;
+    }
+    
+    .panel-filtros {
+        flex: auto;
+    }
+    
+    .seccion-cursos {
+        padding: 40px 20px;
+    }
+}

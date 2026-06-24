@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum EstadoInscripcion {
+  PENDIENTE
+  APROBADA
+  DENEGADA
+}
+
+enum EstadoPago {
+  NO_INICIADO
+  ENVIADO
+  APROBADO
+  RECHAZADO
+}
+
+model User {
+  id            Int           @id @default(autoincrement())
+  email         String        @unique
+  password      String
+  nombre        String?
+  telefono      String?
+  avatarUrl     String?
+  role          Role          @default(USER)
+  createdAt     DateTime      @default(now())
+  inscripciones Inscripcion[]
+}
+
+model Inscripcion {
+  id              Int               @id @default(autoincrement())
+  nombre          String
+  correo          String
+  telefono        String
+  taller          String
+  estado          EstadoInscripcion @default(PENDIENTE)
+  pagoEstado      EstadoPago        @default(NO_INICIADO)
+  pagoMetodo      String?
+  pagoReferencia  String?
+  pagoTitular     String?
+  pagoLast4       String?
+  pagoQrData      String?
+  pagoEnviadoAt   DateTime?
+  pagoRevisadoAt  DateTime?
+  pagoComentarioAdmin String?
+  comentarioAdmin String?
+  respondidoAt    DateTime?
+  userId          Int?
+  user            User?             @relation(fields: [userId], references: [id])
+  createdAt       DateTime          @default(now())
+}
+
+model Curso {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  titulo      String
+  corto       String?
+  descripcion String
+  detalle     String?
+  imagen      String?
+  imagenAlt   String?
+  duracion    String?
+  sede        String?
+  horario     String?
+  materiales  String?
+  notaPresencial String?
+  precio      Int?
+  niveles     String   @default("[]") // JSON string array
+  temas       String   @default("[]") // JSON string array
+  activo      Boolean  @default(true)
+  orden       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model GaleriaItem {
+  id        Int      @id @default(autoincrement())
+  cursoSlug String?
+  src       String
+  alt       String
+  titulo    String
+  alumno    String?
+  nota      String?
+  ancho     String?  // "alto" | "ancho" | null
+  activo    Boolean  @default(true)
+  orden     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PaginaContenido {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique // e.g. "nosotros"
+  titulo    String?
+  lead      String?
+  body      String   @default("") // texto largo (markdown simple)
+  activo    Boolean  @default(true)
+  updatedAt DateTime @updatedAt
+}

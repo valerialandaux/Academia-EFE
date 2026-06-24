@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción | Academia EFE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN (El mismo de la página de inicio) -->
+    <!-- MENÚ DE NAVEGACIÓN INTERACTIVO -->
+    <header class="navbar">
+        <div class="logo">EFE.</div>
+        
+        <!-- Botón Hamburguesa para Móviles -->
+        <div class="menu-hamburguesa" id="btn-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="menu-enlaces">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="inscripcion.html" class="btn-cta">Inscribirse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN DEL FORMULARIO -->
+    <section class="seccion-formulario">
+        <div class="contenedor-form">
+            <h2>Inscripción al Taller de Fotografía</h2>
+            <p>Completa tus datos y asegura tu lugar.</p>
+            
+            <form action="#" method="POST">
+                <div class="grupo-input">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="Ej: Sergio Marquez" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="telefono">Teléfono de Contacto</label>
+                    <input type="tel" id="telefono" placeholder="+591 70000000" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="taller">Selecciona tu Taller</label>
+                    <select id="taller" required>
+                        <option value="">Elige una opción...</option>
+                        <option value="basica">Fotografía Básica</option>
+                        <option value="retrato">Retrato e Iluminación</option>
+                        <option value="edicion">Postproducción y Edición</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
