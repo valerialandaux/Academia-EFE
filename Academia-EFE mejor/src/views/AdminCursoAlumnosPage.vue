@@ -29,7 +29,7 @@ function clasePago(estado) {
   return 'estado-pendiente'
 }
 
-async function cargarCurso() {
+async function cargarCurso() {  /*cargado de errores */
   error.value = ''
   cargando.value = true
 
